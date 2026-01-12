@@ -4,7 +4,7 @@ __pycache__/
 *.pyd
 .Python
 .venv
-.user
+.user.yml
 target/
 dbt_project/logs/
 .DS_Store
