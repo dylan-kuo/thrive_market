@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: int_fifo_matched
+    description: "FIFO matching results with validated integrity"
+    columns:
+      - name: trans_id
+        description: "Transaction ID"
+        tests:
+          - unique
+          - not_null
+      - name: trans_type
+        description: "Transaction type"
+      - name: created_at
+        description: "Transaction creation timestamp"
+      - name: customer_id
+        description: "Customer ID"
+      - name: amount
+        description: "Transaction amount"
+      - name: redeem_id
+        description: "Redeemed ID from FIFO matching"
+        tests:
+          - unique

@@ -1,0 +1,13 @@
+version: 2
+
+sources:
+  - name: main
+    schema: main
+    description: "Raw data loaded into the default DuckDB schema by Python ingestion scripts."
+    tables:
+      - name: raw_tc_data
+        description: "Raw Thrive Cash transaction logs from Excel"
+      - name: raw_sales
+        description: "Raw Sales Order data from Excel"
+      - name: raw_customers
+        description: "Raw Customer demographic data from Excel"

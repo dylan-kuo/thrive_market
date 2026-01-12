@@ -1,0 +1,18 @@
+services:
+  airflow:
+    image: apache/airflow:3.1.5-python3.11
+    container_name: thrive_airflow
+    environment:
+      - AIRFLOW__CORE__LOAD_EXAMPLES=False
+      - AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION=False
+      - AIRFLOW__CORE__SIMPLE_AUTH_MANAGER_ALL_ADMINS=True
+      - DBT_PROFILES_DIR=/opt/airflow/dbt_project
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./scripts:/opt/airflow/scripts
+      - ./data:/opt/airflow/data
+      - ./dbt_project:/opt/airflow/dbt_project
+      - ./requirements.txt:/requirements.txt
+    command: bash -c "pip install -r /requirements.txt && airflow db migrate && airflow standalone"
+    ports:
+      - "8080:8080"

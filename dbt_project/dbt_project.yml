@@ -1,0 +1,14 @@
+name: 'thrive_market'
+version: '1.0.0'
+config-version: 2
+profile: 'thrive_profile'
+model-paths: ["models"]
+
+models:
+  thrive_market:
+    staging:
+      materialized: view
+    intermediate:
+      materialized: table
+    marts:
+      materialized: table

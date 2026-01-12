@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: stg_tc_data
+    description: "Cleaned transaction data with standardized types"
+    columns:
+      - name: transaction_id
+        tests:
+          - unique
+          - not_null
+      - name: type
+        tests:
+          - accepted_values:
+              values: ['earned', 'spent', 'expired']
+
+  - name: stg_sales
+    description: "Cleaned sales data"
+    columns:
+      - name: order_id
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_customers
+    description: "Cleaned customer directory"
+    columns:
+      - name: customer_id
+        tests:
+          - unique
+          - not_null

@@ -1,0 +1,6 @@
+thrive_profile:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: '/opt/airflow/data/thrive.duckdb'
