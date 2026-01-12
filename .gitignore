@@ -6,5 +6,5 @@ __pycache__/
 .venv
 .user
 target/
-logs/
+dbt_project/logs/
 .DS_Store
